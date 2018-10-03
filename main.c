@@ -4,7 +4,7 @@
         BEFORE COMPILING.
 
         SET YOUR CONSOLE FONT TO CONSOLAS.
-        FONT SIZE TO 15.
+        FONT SIZE TO 16.
         SCREEN WIDTH TO 120 (screenWidth).
         SCREEN HEIGHT TO 40 (screenHeight).
 */
