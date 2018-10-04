@@ -10,6 +10,7 @@ In order to run the compile and run the game properly:-
 
 2. SET YOUR FONT SIZE IN BETWEEN 5 AND 16.
    LARGER THE FONT SIZE LARGER WILL BE YOUR SCREEN.
+   
    YOU HAVE TO SET IT MANNUALLY IN COMMAND PROMPT IN DEFAULTS -> FONT.
 
 3. In order to use it you must enable C99 mode by passing -std=c99 before compiling (or some later standard) to GCC.
