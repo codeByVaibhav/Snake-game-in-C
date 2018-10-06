@@ -60,6 +60,7 @@ int main(){
     char q = 254;
     int len = 0;
     int hs = 0;
+    int rate;
     char nscore[10];
     char hscore[10];
     int counter = 0;
@@ -111,8 +112,9 @@ int main(){
         if(snake.x > 28){snake.x = -29;}
         if(snake.y < -18){snake.y = 17;}
         if(snake.y > 17){snake.y = -18;}
-//======================================SNAKE MOVEMENT=================================================
-        if(counter%100==0){
+//======================================SNAKE MOVEMENT UPDATE======================================================
+        rate = 100 - 2*(len/2); // as the snake length increses the speed  of the snake will also increase.
+        if(counter%rate == 0){
             for(int i = len; i >= 0; i--){
                 if(i>0){
                     tail[i].x = tail[i-1].x;
@@ -127,7 +129,7 @@ int main(){
             counter = 0;
         }
         counter++;
-//=======================DRAWING EVERYTHING ON THE SCREEN================================================
+//=======================DRAWING EVERYTHING ON THE SCREEN=========================================================
         // food
         draw(foodpos.x, foodpos.y, screen, 234, 0, 0);
         // snake
