@@ -1,6 +1,0 @@
-This is a Basic Snake Game written in C Language.
-
-Play the game.
-Its fun. ;)
-
-Change the code as you like.
