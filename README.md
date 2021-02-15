@@ -3,19 +3,14 @@ Snake game in C using ASCII chars.
 
 This is a Code::Block project.
 
-NOTE:
+## Note:
 
-1. THESE CODES WILL ONLY WORK IN WINDOWS PLATFORM AS I HAVE USED WINDOWS LIBRARY.
-
-In order to run the compile and run the game properly:-
-
-2. SET YOUR CONSOLE FONT TO CONSOLAS.
-
-3. SET YOUR FONT SIZE IN BETWEEN 5 AND 16.
-
-   LARGER THE FONT SIZE LARGER WILL BE YOUR SCREEN.
-   
-   YOU HAVE TO SET IT MANNUALLY IN COMMAND PROMPT IN DEFAULTS -> FONT.
+1. these codes will only work in windows platform as i have used windows library.
+### In order to run the compile and run the game properly:-
+2. set your console font to consolas.
+3. set your font size in between 5 and 16.
+   larger the font size larger will be your screen.
+   you have to set it mannually in command prompt in defaults -> font.
 
 4. In order to use it you must enable C99 mode by passing -std=c99 before compiling (or some later standard) to GCC.
  
