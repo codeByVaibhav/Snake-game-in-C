@@ -19,6 +19,9 @@
 #define SCREEN_WIDTH 120
 #define SCREEN_HEIGHT 40
 
+// #define SCREEN_WIDTH 480
+// #define SCREEN_HEIGHT 360
+
 const int SCREEN_SIZE = SCREEN_WIDTH * SCREEN_HEIGHT;
 
 int eaten = 0;
@@ -153,37 +156,31 @@ int main()
             }
         }
         // boundary collision detection.
-        if (snake.x < -29)
-        {
-            snake.x = 28;
-        }
-        if (snake.x > 28)
-        {
-            snake.x = -29;
-        }
-        if (snake.y < -18)
-        {
-            snake.y = 17;
-        }
-        if (snake.y > 17)
-        {
-            snake.y = -18;
-        }
+        snake.x = snake.x < -29 ? 28 : snake.x;
+        snake.x = snake.x > 28 ? -29 : snake.x;
+        snake.y = snake.y < -18 ? 17 : snake.y;
+        snake.y = snake.y > 17 ? -18 : snake.y;
+
         //======================================SNAKE MOVEMENT UPDATE======================================================
+
         rate = 250 - 2 * (len / 2); // as the snake length increses the speed  of the snake will also increase.
+
         if (counter % rate == 0)
         {
-            tail[0] = snake;
             for (int i = len; i > 0; i--)
             {
                 tail[i] = tail[i - 1];
             }
+            tail[0] = snake;
             snake.x += speed.x;
             snake.y += speed.y;
             counter = 0;
         }
+
         counter++;
+
         //=======================DRAWING EVERYTHING ON THE SCREEN=========================================================
+
         // food
         draw(foodpos.x, foodpos.y, screen, 234, 0, 0);
 
@@ -257,12 +254,10 @@ void pause(unsigned int wtime)
 // FUNCTION FOR DRAWING A CHAR ON SCREEN. GIVEN ITS X ANY Y POSITION AND CHAR P.
 void draw(float x, float y, char *scr, char p, float xoff, float yoff)
 {
-    x += xoff;
-    y += yoff;
-    x = 2 * x;
-    y = -y;
+    x = (int)(2 * (x + xoff));
+    y = (int)(-(y + yoff));
 
-    int drawon = (((int)y + SCREEN_HEIGHT / 2) * SCREEN_WIDTH) + ((int)x + SCREEN_WIDTH / 2);
+    int drawon = ((y + SCREEN_HEIGHT / 2) * SCREEN_WIDTH) + (x + SCREEN_WIDTH / 2);
 
     if (drawon < SCREEN_SIZE && drawon >= 0)
     {
